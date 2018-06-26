@@ -55,7 +55,7 @@ if(process.argv.length>3){
 
 fs.readFile(
 		
-	__dirname + '/' + infilename, // Input file path
+	process.cwd() + '/' + infilename, // Input file path
 	
 	function( err, bytes ){
 		if(err){ console.log(err); throw err; }
@@ -73,7 +73,7 @@ fs.readFile(
 			
 			// writing to file
 			fs.writeFile(
-				__dirname + '/' + outfilename, // Output file path
+				process.cwd() + '/' + outfilename, // Output file path
 				svgstring,
 				function(err){ if(err){ console.log(err); throw err; } console.log( __dirname + '/'+outfilename+' was saved!' ); }
 			);
